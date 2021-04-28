@@ -9,6 +9,9 @@ import { HomeRepairsComponent } from './containers/home-repairs/home-repairs.com
 import { HomeRepairEntryComponent } from './components/home-repair-entry/home-repair-entry.component';
 import { HomeRepairListComponent } from './components/home-repair-list/home-repair-list.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { StoreModule } from '@ngrx/store';
+import { reducers } from './components/reducers';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,9 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    StoreModule.forRoot(reducers),
+    StoreDevtoolsModule.instrument()
   ],
   providers: [],
   bootstrap: [AppComponent]

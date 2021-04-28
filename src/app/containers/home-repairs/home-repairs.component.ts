@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { AppState, selectAllHomeRepairs } from 'src/app/components/reducers';
 import { HomeRepairModel } from 'src/app/models';
 
 @Component({
@@ -7,18 +10,15 @@ import { HomeRepairModel } from 'src/app/models';
   styleUrls: ['./home-repairs.component.css']
 })
 export class HomeRepairsComponent implements OnInit {
-  id: 3;
-  stuffToDo: HomeRepairModel[] = [
-    { id: '1', item: 'Clean Garage', completed: false, assignedTo: 'jeff@hypertheory.com' },
-    { id: '2', item: 'Mow Grass', completed: false, assignedTo: 'Brett@aol.com', project: 'Yard' }
-  ]
-  constructor() { }
+  stuffToDo$: Observable<HomeRepairModel[]>
+
+  constructor(private store: Store<AppState>) { }
 
   ngOnInit(): void {
+    this.stuffToDo$ = this.store.select(selectAllHomeRepairs)
   }
 
   onItemAdded(item: HomeRepairModel) {
-    item = { id: this.id++, ...item };
-    this.stuffToDo = [item, ...this.stuffToDo];
+
   }
 }

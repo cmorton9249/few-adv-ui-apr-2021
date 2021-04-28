@@ -5,5 +5,5 @@
   <app-home-repair-entry (itemAdded)="onItemAdded($event)"></app-home-repair-entry>
 </section>
 <section>
-  <app-home-repair-list [list]="stuffToDo"></app-home-repair-list>
+  <app-home-repair-list [list]="stuffToDo$ | async"></app-home-repair-list>
 </section>
