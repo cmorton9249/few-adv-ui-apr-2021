@@ -8,6 +8,7 @@ import { NavComponent } from './components/nav/nav.component';
 import { HomeRepairsComponent } from './containers/home-repairs/home-repairs.component';
 import { HomeRepairEntryComponent } from './components/home-repair-entry/home-repair-entry.component';
 import { HomeRepairListComponent } from './components/home-repair-list/home-repair-list.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HomeRepairListComponent } from './components/home-repair-list/home-repa
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
