@@ -1,1 +1,9 @@
-<app-home-repair-entry></app-home-repair-entry>
+<header>
+  <h2>Home Repairs</h2>
+</header>
+<section>
+  <app-home-repair-entry (itemAdded)="onItemAdded($event)"></app-home-repair-entry>
+</section>
+<section>
+  <app-home-repair-list [list]="stuffToDo"></app-home-repair-list>
+</section>

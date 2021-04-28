@@ -6,6 +6,14 @@
            name="item"
            formControlName="item">
   </div>
+  <div class="alert alert-danger"
+       *ngIf="item.errors && (item.touched || item.dirty)">
+    <p *ngIf="item.errors.required">This is required.</p>
+    <p *ngIf="item.errors.minlength">Not Long Enough!
+      it has to be {{ item.errors?.minlength.requiredLength }} and it is now
+      {{ item.errors?.minlength.actualLength}}
+    </p>
+  </div>
   <div class="form-group">
     <label for="project">Project</label>
     <input class="form-control"
@@ -17,6 +25,13 @@
     <input class="form-control"
            name="assignedTo"
            formControlName="assignedTo">
+    <div class="alert alert-danger"
+         *ngIf="assignedTo.errors && (assignedTo.touched || assignedTo.dirty)">
+      <p *ngIf="assignedTo.errors?.required">This is required.</p>
+      <p *ngIf="assignedTo.errors?.email">
+        We need a valid email address.
+      </p>
+    </div>
   </div>
   <div class="form-check">
     <input class="form-check-input"
