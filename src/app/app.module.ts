@@ -6,13 +6,17 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavComponent } from './components/nav/nav.component';
 import { HomeRepairsComponent } from './containers/home-repairs/home-repairs.component';
+import { HomeRepairEntryComponent } from './components/home-repair-entry/home-repair-entry.component';
+import { HomeRepairListComponent } from './components/home-repair-list/home-repair-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NavComponent,
-    HomeRepairsComponent
+    HomeRepairsComponent,
+    HomeRepairEntryComponent,
+    HomeRepairListComponent
   ],
   imports: [
     BrowserModule,
