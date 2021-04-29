@@ -5,7 +5,9 @@
     <h6 class="card-subtitle mb-2 text-muted">{{ item.project || 'No Project Assigned' }}</h6>
     <p class="card-text">This is a assigned to {{ item.assignedTo }}</p>
 
-    <button *ngIf="!item.completed"
+    <span *ngIf="item.id.toString().startsWith('McLovin')"
+          class="alert alert-info">Pending...</span>
+    <button *ngIf="!item.id.toString().startsWith('McLovin') && !item.completed"
             class="card-link">Mark Complete</button>
   </div>
 </div>

@@ -12,6 +12,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
 import { reducers } from './components/reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { HttpClientModule } from '@angular/common/http'
+import { EffectsModule } from '@ngrx/effects';
+import { HomeRepairEffects } from './components/effects/home-repair.effects';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,9 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     AppRoutingModule,
     ReactiveFormsModule,
     StoreModule.forRoot(reducers),
-    StoreDevtoolsModule.instrument()
+    StoreDevtoolsModule.instrument(),
+    EffectsModule.forRoot([HomeRepairEffects]),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
